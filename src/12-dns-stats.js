@@ -29,7 +29,11 @@ function getDNSStats(domains) {
     subDomains.reduce((acc, item) => {
       const curr = `.${item}`;
 
-      domainsCounter[acc + curr] = (domainsCounter[acc + curr]) ? domainsCounter[acc + curr] + 1 : 1;
+      if (domainsCounter[acc + curr]) {
+        domainsCounter[acc + curr] += 1;
+      } else {
+        domainsCounter[acc + curr] = 1;
+      }
 
       return acc + curr;
     }, '');

@@ -32,7 +32,7 @@ class Queue {
     if (this.list.value === undefined) {
       this.list = node;
 
-      return true;
+      return this.list;
     }
 
     if (this.list.next === null) {
@@ -46,6 +46,8 @@ class Queue {
 
       lastNode.next = node;
     }
+
+    return this.list;
   }
 
   dequeue() {
