@@ -34,7 +34,7 @@ function getCommonCharacterCount(s1, s2) {
   for (let i = 0; i < length; i++) {
     const char = Object.keys(counter1)[i];
 
-    if (char in counter2 && char in counter2) {
+    if (char in counter2) {
       countCommon += (counter1[char] < counter2[char]) ? counter1[char] : counter2[char];
     }
   }
